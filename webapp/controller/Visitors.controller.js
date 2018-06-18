@@ -6,8 +6,25 @@ sap.ui.define([
 	"use strict";
 
 	return Controller.extend("com.sapvisitors-techschool-1st.controller.Visitors", {
-		
+		oVisitorsModel : new sap.ui.model.json.JSONModel(),
+	    sDestinationURL : "cf-python-visitors",
 		formatter: formatter,
+		
+		onInit: function() {
+		    var that = this;
+		    
+		    this.oVisitorsModel.setData({
+		    	visitorList: []
+		    });
+		    
+	        this.getView().setModel(this.oVisitorsModel, "Visitors");
+	        
+	        this.getView().addEventDelegate({
+			        onBeforeShow: function () {
+			            that.fnLoadTasksFromServer(that);
+			        }
+			});
+		},
 		
 		onItemClose: function (oEvent) {
 			var oItem = oEvent.getSource(),
@@ -24,6 +41,34 @@ sap.ui.define([
 		
 		onRejectPress: function(e){
 			MessageToast.show("You have rejected the visitor");
+		},
+		
+		fnLoadTasksFromServer: function(that){
+		    jQuery.ajax(this.sDestinationURL + "/api/visitors", {
+		        dataType: "json",
+		        method: "GET",
+				contentType: "application/json; charset=UTF-8",
+				success: that.fnSuccessCallback(that),
+				error: that.fnErrorCallback
+		    });
+		},
+		
+		onAfterRendering: function() {
+		    this.getView().setBusy(true);
+	        this.fnLoadTasksFromServer(this);
+		},
+		
+		fnSuccessCallback : function(controller){
+		    return function(data){
+		        var oModelData = controller.oVisitorsModel.getData();  
+		        oModelData.visitorList = data;
+		        controller.oVisitorsModel.setData(oModelData);
+		        controller.getView().setBusy(false);
+		    };
+		},
+		
+		fnErrorCallback: function(){
+		    console.log("Error!!!");
 		}
 		
 	});

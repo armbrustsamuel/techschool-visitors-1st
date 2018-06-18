@@ -17,7 +17,6 @@
 							unread="true"
 							priority="None"
 							close="onItemClose"
-							press="onListItemPress"
 							authorName="Author">
 						<buttons>
 							<Button text="Accept" type="Accept" press="onAcceptPress"/>

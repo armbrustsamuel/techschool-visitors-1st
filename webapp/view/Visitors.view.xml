@@ -1,4 +1,4 @@
-<mvc:View controllerName="visitors-techschool-1st.controller.Visitors" 
+<mvc:View controllerName="techschool-visitors-1st.controller.Visitors" 
 	xmlns:html="http://www.w3.org/1999/xhtml"
 	xmlns:mvc="sap.ui.core.mvc" 
 	displayBlock="true" 

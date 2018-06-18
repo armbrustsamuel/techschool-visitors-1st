@@ -1,7 +1,7 @@
 {
 	"_version": "1.7.0",
 	"sap.app": {
-		"id": "com.sapvisitors-techschool-1st",
+		"id": "visitors-techschool-1st",
 		"type": "application",
 		"i18n": "i18n/i18n.properties",
 		"applicationVersion": {
@@ -39,7 +39,7 @@
 
 	"sap.ui5": {
 		"rootView": {
-			"viewName": "com.sapvisitors-techschool-1st.view.Visitors",
+			"viewName": "visitors-techschool-1st.view.Visitors",
 			"type": "XML"
 		},
 		"dependencies": {
@@ -62,7 +62,7 @@
 			"i18n": {
 				"type": "sap.ui.model.resource.ResourceModel",
 				"settings": {
-					"bundleName": "com.sapvisitors-techschool-1st.i18n.i18n"
+					"bundleName": "visitors-techschool-1st.i18n.i18n"
 				}
 			}
 		},

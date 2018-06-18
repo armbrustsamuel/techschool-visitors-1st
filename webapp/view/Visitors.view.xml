@@ -1,4 +1,4 @@
-<mvc:View controllerName="com.sapvisitors-techschool-1st.controller.Visitors" 
+<mvc:View controllerName="visitors-techschool-1st.controller.Visitors" 
 	xmlns:html="http://www.w3.org/1999/xhtml"
 	xmlns:mvc="sap.ui.core.mvc" 
 	displayBlock="true" 
@@ -7,13 +7,16 @@
 		<pages>
 			<Page title="{i18n>title}">
 				<content>
-					<List id="visitorList" class="sapContrast sapContrastPlus">
+					<List id="visitorList" class="sapContrast sapContrastPlus" items="{Visitors>/visitorList}">
 				    	<!--https://sapui5.hana.ondemand.com/#/sample/sap.m.sample.NotificationListItem/code/C.controller.js-->
 		                <NotificationListItem
-							title="Author has accessed the BlueMix website"
+							title="{Visitors>name} has accessed the BlueMix website"
 							description="This is a tracker for Website visitors."
 							showCloseButton="true"
-							datetime="None"
+							datetime="{
+									path: 'Visitors>timestamp',
+									formatter: '.formatter.dateFormatter'
+								}"
 							unread="true"
 							priority="None"
 							close="onItemClose"

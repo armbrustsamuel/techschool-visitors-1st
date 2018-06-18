@@ -5,7 +5,7 @@ sap.ui.define([
 ], function(Controller, formatter, MessageToast) {
 	"use strict";
 
-	return Controller.extend("com.sapvisitors-techschool-1st.controller.Visitors", {
+	return Controller.extend("visitors-techschool-1st.controller.Visitors", {
 		oVisitorsModel : new sap.ui.model.json.JSONModel(),
 	    sDestinationURL : "cf-python-visitors",
 		formatter: formatter,

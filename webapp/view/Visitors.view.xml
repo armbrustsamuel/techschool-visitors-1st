@@ -18,9 +18,11 @@
 									formatter: '.formatter.dateFormatter'
 								}"
 							unread="true"
-							priority="None"
+							highlight="Success"
+							priority="High"
+							authorPicture="{= ${Visitors>age} > 20 ? 'sap-icon://hint' : 'sap-icon://car-rental'}"
 							close="onItemClose"
-							authorName="Author">
+							authorName="{Visitors>name}">
 						<buttons>
 							<Button text="Accept" type="Accept" press="onAcceptPress"/>
 							<Button text="Reject" type="Reject" press="onRejectPress"/>

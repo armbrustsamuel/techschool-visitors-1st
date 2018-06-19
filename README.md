@@ -29,6 +29,9 @@ http://getstartedpython-incommensurable-basidiospore.mybluemix.net/
 2. Press enter
 3. A new entry should be created for your user
 
+## Example
+https://techschoolvisitors1st-i843890trial.dispatcher.hanatrial.ondemand.com/?hc_reset
+
 
 
 
